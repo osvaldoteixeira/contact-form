@@ -8,21 +8,21 @@
   </head>
   <body>
     <main>
-      <form action="">
+      <form action="process-data.php" method="post">
         <!-- Nome: -->
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" placeholder="Digite seu nome" />
+        <input type="text" name="nome" placeholder="Digite seu nome" required>
 
         <!-- Email: -->
         <label for="email">Email:</label>
-        <input type="email" name="email" placeholder="exemplo@provedor.com">
+        <input type="email" name="email" placeholder="exemplo@provedor.com" required>
 
         <!-- Mensagem: -->
         <label for="mensagem">Mensagem:</label>
-        <textarea name="mensagem" cols="30" rows="10" placeholder="Digite sua mensagem"></textarea>
+        <textarea name="mensagem" cols="30" rows="10" placeholder="Digite sua mensagem" required></textarea>
 
         <!-- Botão Enviar: -->
-        <button type="submit">Enviar</button>
+        <button class="" type="submit">Enviar</button>
       </form>
     </main>
   </body>

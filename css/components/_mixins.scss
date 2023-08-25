@@ -1,0 +1,16 @@
+// PARA CRIAR UM MIXIN:
+  /* SINTAXE:  
+    @mixin name(parameters){
+      statements
+    }
+  */
+
+  /* USE:
+    @include name(arguments);
+  */
+
+@mixin displayAlign($display,$justify,$align){
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
