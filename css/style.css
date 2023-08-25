@@ -6,8 +6,25 @@
 
 :root {
   --font-default: Arial, Helvetica, sans-serif;
+  --demarcador: solid 1px aqua;
 }
 
 body {
   font-family: var(--font-default);
+}
+body main {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+body main form {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.15);
+  width: 100vw;
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */
