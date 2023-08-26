@@ -1,7 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --bg0: #cccccc;
+  --bg1: #dddddd;
+  --bg2: #eeeeee;
+  --bg3: #ffffff;
+  --color-primary: #1bdd9d;
+  --color-secondary: #633bbc;
+  --color: #000;
+  --rgba-smo: rgba(0, 0, 0, 0.05);
+  --rgba-low: rgba(0, 0, 0, 0.25);
+  --rgba-mid: rgba(0, 0, 0, 0.5);
+  --soft-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.dark {
+  --color-primary: #633bbc;
+  --color-secondary: #1bdd9d;
+  --bg0: #121214;
+  --bg1: #202024;
+  --bg2: #242428;
+  --bg3: #292930;
+  --color: #fff;
+  --rgba-smo: rgba(255, 255, 255, 0.05);
+  --rgba-low: rgba(255, 255, 255, 0.25);
+  --rgba-mid: rgba(255, 255, 255, 0.5);
 }
 
 /* SINTAXE:  
@@ -13,7 +41,9 @@
   @include name(arguments);
 */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg0);
+  color: var(--color);
 }
 body main {
   width: 100vw;
@@ -21,9 +51,10 @@ body main {
   display: flex;
   justify-content: "";
   align-items: "";
+  flex-direction: column;
 }
 body main form {
-  box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--soft-shadow);
   width: 90%;
   margin: auto;
   display: flex;
@@ -39,7 +70,7 @@ body main form input,
 body main form textarea,
 body main form button {
   padding: 12px;
-  border: solid 1px rgba(0, 0, 0, 0.25);
+  border: solid 1px var(--rgba-low);
   border-radius: 4px;
 }
 body main form input::-moz-placeholder, body main form textarea::-moz-placeholder {
@@ -51,11 +82,14 @@ body main form textarea::placeholder {
 }
 body main form input:focus,
 body main form textarea:focus {
-  outline: solid 1px rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.05);
+  outline: solid 1px var(--rgba-mid);
+  background-color: var(--rgba-smo);
 }
 body main form input {
   margin: 0 0 30px 0;
+}
+body main form input + button {
+  margin: 0;
 }
 body main form button {
   margin-top: 20px;
@@ -73,4 +107,215 @@ body main form button.looked {
 }
 body main form button:hover {
   background: #1ca364;
+}
+body main div.messages {
+  background: rgb(255, 255, 255);
+  color: black;
+  padding: 20px;
+}
+body main div.messages h2 {
+  margin-bottom: 20px;
+}
+body main div.messages ul {
+  list-style: none;
+}
+body main div.messages ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body main.home {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  display: flex;
+  justify-content: "";
+  align-items: start;
+  margin: 50px auto 0;
+  width: 90%;
+  max-width: 600px;
+  font-family: "Inter", sans-serif;
+  background: var(--bg1);
+  box-shadow: var(--soft-shadow);
+  border-radius: 6px;
+}
+body main.home div.dev-card {
+  display: flex;
+  justify-content: "";
+  align-items: "";
+  gap: 0px;
+  width: 100%;
+  margin-bottom: 40px;
+  border-radius: 6px;
+  padding: 20px 40px;
+  background-color: var(--bg2);
+}
+body main.home div.dev-card div.avatar {
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main.home div.dev-card div.avatar img {
+  width: 160px;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: solid 6px var(--bg1);
+  outline: solid 3px var(--color);
+}
+body main.home div.dev-card div.dev-info {
+  width: 100%;
+  padding: 20px 0 20px 20px;
+  border-radius: 6px;
+}
+body main.home div.dev-card div.dev-info div.bio {
+  display: flex;
+  justify-content: "";
+  align-items: "";
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+body main.home div.dev-card div.dev-info div.bio span.office {
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-top: -6px;
+  letter-spacing: 0;
+}
+body main.home div.dev-card div.dev-info div.bio p.text_bio {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+body main.home div.info-project {
+  padding: 0 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+body main.home div.info-project div.about-project h1 {
+  margin-bottom: 20px;
+}
+body main.home div.info-project div.about-project + h2 {
+  margin-bottom: -40px;
+}
+body main.home div.info-project div.technologies {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  color: var(--color);
+}
+body main.home div.info-project div.technologies div.front-end,
+body main.home div.info-project div.technologies div.back-end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  flex-grow: 1;
+  padding: 20px 0;
+  gap: 20px;
+}
+body main.home div.info-project div.technologies div.front-end p,
+body main.home div.info-project div.technologies div.back-end p {
+  width: 100%;
+}
+body main.home div.info-project div.technologies div.front-end div.svgs,
+body main.home div.info-project div.technologies div.back-end div.svgs {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+body main.home div.info-project div.technologies div.front-end div.svgs div.svg,
+body main.home div.info-project div.technologies div.back-end div.svgs div.svg {
+  flex-grow: 1;
+  max-width: 46px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+body main.home div.info-project div.technologies div.front-end div.svgs div.svg .svg_mysql,
+body main.home div.info-project div.technologies div.back-end div.svgs div.svg .svg_mysql {
+  background-color: white;
+  border-radius: 6px;
+  padding: 4px;
+}
+body main.home div.info-project div.technologies div.separator {
+  width: 1px;
+  height: 90px;
+  background-color: var(--rgba-low);
+}
+body main.home div.info-project div.call-to-action a.btn {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 24px;
+  background-color: var(--color-primary);
+  color: var(--color);
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 12px;
+}
+body main.home div.info-project div.call-to-action a.btn svg {
+  width: 1.4em;
+  height: 1.4em;
+}
+body main.home div.info-project div.call-to-action a.btn svg path {
+  fill: var(--color);
+}
+body main.home div.info-project div.call-to-action a.btn:hover {
+  background-color: var(--color-secondary);
+  color: var(--bg0);
+}
+body main.home div.info-project div.call-to-action a.btn:hover svg path {
+  fill: var(--bg0);
+}
+body main.home p {
+  letter-spacing: 0.6px;
+  line-height: 1.4;
+}
+
+div.networks {
+  margin: 10px 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+div.networks a.link_github, div.networks a.link_linkedin, div.networks a.link_gmail {
+  background-color: var(--bg3);
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--color);
+  box-shadow: var(--soft-shadow);
+}
+div.networks a.link_gmail svg path {
+  fill: var(--bg2);
+}
+div.networks a.link_gmail svg path.body_svg {
+  fill: var(--color);
+}
+
+@media (max-width: 640px) {
+  * {
+    color: var(--bg0);
+  }
 }/*# sourceMappingURL=style.css.map */

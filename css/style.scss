@@ -4,12 +4,15 @@
 
 // BODY
 body {
-  font-family: $font-default;
+  font-family: $font-inter;
+  background-color: $bg0;
+  color: $color;
 
   main {
     width: 100vw;
     min-height: 100vh;
     @include displayAlign(flex, "", "");
+    flex-direction: column;
 
     form {
       // border: var(--demarcador);
@@ -37,11 +40,11 @@ body {
       }
 
       input,
-      textarea{
-        &::placeholder{
+      textarea {
+        &::placeholder {
           color: $color-ph;
         }
-        &:focus{
+        &:focus {
           outline: $outline;
           background-color: $rgba-smo;
         }
@@ -49,27 +52,269 @@ body {
 
       input {
         margin: 0 0 30px 0;
+
+        & + button {
+          margin: 0;
+        }
       }
 
       button {
         margin-top: 20px;
         background: $bg-btn;
-        color: $color;
+        color: $color-btn;
         font-weight: bold;
         text-transform: uppercase;
         font-size: 1rem;
         letter-spacing: 1.5px;
         cursor: pointer;
 
-        &.looked{
+        &.looked {
           background: $bg-btn-look;
           cursor: not-allowed;
         }
 
-        &:hover{
+        &:hover {
           background: $bg-btn-hover;
         }
       }
     }
+
+    div.messages {
+      // border: $demarcador;
+      background: rgb(255, 255, 255);
+      color: black;
+      padding: 20px;
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    }
+
+    &.home {
+      min-height: fit-content;
+      @include displayAlign(flex, "", start);
+      // border: $demarcador;
+      margin: 50px auto 0;
+      width: 90%;
+      max-width: 600px;
+      font-family: $font-inter;
+      background: $bg1;
+      box-shadow: $soft-shadow;
+      border-radius: 6px;
+
+      div.dev-card {
+        @include displayAlign(flex, "", "");
+        gap: 0px;
+        width: 100%;
+        margin-bottom: 40px;
+        border-radius: 6px;
+        padding: 20px 40px;
+        background-color: $bg2;
+        // border: $demarcador;
+
+        div.avatar {
+          padding: 4px;
+          @include displayAlign(flex, center, center);
+
+          img {
+            width: 160px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 50%;
+            border: solid 6px $bg1;
+            outline: solid 3px $color;
+          }
+        }
+
+        div.dev-info {
+          width: 100%;
+          padding: 20px 0 20px 20px;
+          border-radius: 6px;
+
+          div.bio {
+            @include displayAlign(flex, "", "");
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+            span.office {
+              font-size: 0.75rem;
+              font-weight: 400;
+              margin-top: -6px;
+              letter-spacing: 0;
+            }
+            p.text_bio {
+              margin-top: 10px;
+              font-size: 0.8rem;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+
+      div.info-project {
+        padding: 0 40px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        div.about-project {
+          h1 {
+            margin-bottom: 20px;
+          }
+        }
+
+        div.about-project + h2 {
+          margin-bottom: -40px;
+        }
+
+        div.technologies {
+          // background-color: $bg2;
+          // margin: 20px 0 0;
+          @include displayAlign(flex, start, center);
+          gap: 40px;
+          width: 100%;
+          color: $color;
+          // border: $demarcador;
+
+          div.front-end,
+          div.back-end {
+            @include displayAlign(flex, center, center);
+            flex-flow: column;
+            // background-color: red;
+            flex-grow: 1;
+            padding: 20px 0;
+            gap: 20px;
+
+            p {
+              // border: $demarcador;
+              width: 100%;
+            }
+
+            div.svgs {
+              // border: $demarcador;
+              width: 100%;
+              @include displayAlign(flex, start, center);
+              gap: 10px;
+
+              div.svg {
+                // border: $demarcador;
+                // background-color: $bg3;
+                flex-grow: 1;
+                max-width: 46px;
+                // padding: 6px;
+                aspect-ratio: 1/1;
+                @include displayAlign(flex, center, center);
+                border-radius: 6px;
+
+                .svg_mysql {
+                  background-color: white;
+                  border-radius: 6px;
+                  padding: 4px;
+                }
+              }
+            }
+          }
+
+          div.separator {
+            width: 1px;
+            height: 90px;
+            background-color: $rgba-low;
+          }
+        }
+
+        div.call-to-action {
+          a.btn {
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            background-color: $color-primary;
+            color: $color;
+            border-radius: 6px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            gap: 12px;
+
+            svg {
+              width: 1.4em;
+              height: 1.4em;
+              path {
+                fill: $color;
+              }
+            }
+
+            &:hover {
+              background-color: $color-secondary;
+              color: $bg0;
+
+              svg {
+                path {
+                  fill: $bg0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      p {
+        // text-align: justify;
+        letter-spacing: 0.6px;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+div.networks {
+  // border: $demarcador;
+  margin: 10px 0;
+  width: fit-content;
+  @include displayAlign(flex, start, center);
+  flex-wrap: wrap;
+  gap: 10px;
+  a {
+    &.link_github,
+    &.link_linkedin,
+    &.link_gmail {
+      background-color: $bg3;
+      padding: 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      @include displayAlign(flex, start, center);
+      gap: 12px;
+      font-size: 0.8rem;
+      color: $color;
+      box-shadow: $soft-shadow;
+    }
+
+    &.link_gmail {
+      svg {
+        path {
+          fill: $bg2;
+
+          &.body_svg {
+            fill: $color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  * {
+    color: $bg0;
   }
 }

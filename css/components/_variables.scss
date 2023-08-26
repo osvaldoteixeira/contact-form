@@ -1,17 +1,59 @@
-// VARIABLES
-$demarcador: solid 1px aqua;
-$font-default: Arial, Helvetica, sans-serif;
-$rgba-smo: rgba(0,0,0,0.05);
-$rgba-low: rgba(0,0,0,0.25);
-$rgba-mid: rgba(0,0,0,0.50);
+@import "fonts";
 
-$soft-shadow: 0 0 15px 0px $rgba-low;
+:root {
+  --bg0: #cccccc;
+  --bg1: #dddddd;
+  --bg2: #eeeeee;
+  --bg3: #ffffff;
+  // --color-primary: #8257e5;
+  --color-primary: #1bdd9d;
+  --color-secondary: #633bbc;
+  --color: #000;
+  --rgba-smo: rgba(0, 0, 0, 0.05);
+  --rgba-low: rgba(0, 0, 0, 0.25);
+  --rgba-mid: rgba(0, 0, 0, 0.5);
+  --soft-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.dark {
+  --color-primary: #633bbc;
+  --color-secondary: #1bdd9d;
+  --bg0: #121214;
+  --bg1: #202024;
+  --bg2: #242428;
+  --bg3: #292930;
+  --color: #fff;
+  --rgba-smo: rgba(255, 255, 255, 0.05);
+  --rgba-low: rgba(255, 255, 255, 0.25);
+  --rgba-mid: rgba(255, 255, 255, 0.5);
+}
+// VARIABLES
+// BACKGROUNDS
+$bg0: var(--bg0);
+$bg1: var(--bg1);
+$bg2: var(--bg2);
+$bg3: var(--bg3);
+$rgba-smo: var(--rgba-smo);
+$rgba-low: var(--rgba-low);
+$rgba-mid: var(--rgba-mid);
+
+// COLORS
+$color: var(--color);
+$color-primary: var(--color-primary);
+$color-secondary: var(--color-secondary);
+$demarcador: solid 1px $color-primary;
+
+$soft-shadow: var(--soft-shadow);
 $soft-border: solid 1px $rgba-low;
 $outline: solid 1px $rgba-mid;
 
-$color: #ffffff;
+$color-btn: #ffffff;
 $color-ph: #a0a0a0;
 
 $bg-btn: #158651;
 $bg-btn-hover: #1ca364;
 $bg-btn-look: #a0a0a0;
+
+// FONTS
+$font-default: Arial, Helvetica, sans-serif;
+$font-inter: "Inter", sans-serif;
