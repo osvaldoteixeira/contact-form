@@ -116,8 +116,7 @@ body {
         @include displayAlign(flex, "", "");
         gap: 0px;
         width: 100%;
-        margin-bottom: 40px;
-        border-radius: 6px;
+        border-radius: 6px 6px 0 0;
         padding: 20px 40px;
         background-color: $bg2;
         // border: $demarcador;
@@ -132,7 +131,7 @@ body {
             object-fit: cover;
             border-radius: 50%;
             border: solid 6px $bg1;
-            outline: solid 3px $color;
+            outline: solid 2px $color;
           }
         }
 
@@ -146,6 +145,11 @@ body {
             flex-direction: column;
             gap: 10px;
             margin-bottom: 20px;
+
+            h3.name {
+              font-size: 1.5rem;
+            }
+
             span.office {
               font-size: 0.75rem;
               font-weight: 400;
@@ -162,7 +166,7 @@ body {
       }
 
       div.info-project {
-        padding: 0 40px 40px;
+        padding: 40px;
         display: flex;
         flex-direction: column;
         gap: 40px;

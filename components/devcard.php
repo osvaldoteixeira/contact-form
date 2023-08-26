@@ -1,7 +1,7 @@
 <?php
 require_once 'comp-networks.php';
 $name = "Osvaldo Teixeira";
-$office = "Desenvolvedor Web e programador front-end.";
+$office = "Desenvolvedor Web";
 $phrase = "Estudo programação e design
 para criar sites cada vez mais bonitos. 💜";
 
@@ -13,7 +13,7 @@ $devcard = '
   </div>
   <div class="dev-info">
     <div class="bio">
-      <h3>
+      <h3 class="name">
           ' .$name. '
       </h3>
       <span class="office">
